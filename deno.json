@@ -1,7 +1,5 @@
 {
-  "name": "@early-tester/smartcrow-core",
+  "name": "@smartcrow/v1",
   "version": "0.1.0",
-  "exports": "./mod.ts",
-  "imports": {
-  }
+  "exports": "./mod.ts"
 }
