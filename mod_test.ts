@@ -56,7 +56,7 @@ Deno.test(async function test_check_sales_condition() {
   );
   assertEquals(
     (await checkSalesCondition(tx, "2023-09-25", "550000")).result.reason,
-    "Didn't perform sales within timeframe: 1970-01-01 05:30:00. Lockout Period until: 1970-03-02 05:30:00",
+    "Didn't perform sales within timeframe: 1970-01-01 00:00:00. Lockout Period until: 1970-03-02 00:00:00",
   );
   assertEquals(
     (await checkSalesCondition(tx, "2023-09-25", "550000")).deadlineCheckResult,
