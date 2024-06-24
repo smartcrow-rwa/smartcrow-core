@@ -1,3 +1,4 @@
+// deno-lint-ignore-file no-explicit-any
 import { abi } from "./deps.ts";
 import { DateTime } from "./deps.ts";
 
@@ -6,7 +7,7 @@ export function getHelloWorld(): string {
   return ("Hello World");
 }
 
-export function extractAddressAndZip(propertyNumber: string) {
+export function extractAddressAndZip(propertyNumber: string): any {
   const parts = propertyNumber.split(/[\s,-]+/);
   let streetAddress = parts.slice(0, 3).join(" ");
   let postalCode: string | null = null;
@@ -29,16 +30,15 @@ export function extractAddressAndZip(propertyNumber: string) {
   return { formattedAddress, postalCode, streetAddress };
 }
 
-export function getABI() {
+export function getABI(): any {
   return abi;
 }
 
 export async function checkSalesCondition(
-  // deno-lint-ignore no-explicit-any
   tx: any,
   lastSaleDate: string,
   lastSalePrice: string,
-) {
+): Promise<any> {
   // Check Sales condition
   // Store sales details from agreement
   // Declare variables for the condition
